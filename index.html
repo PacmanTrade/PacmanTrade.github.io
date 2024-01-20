@@ -1,0 +1,726 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Official API Document Of Pacman.Trade</title>
+    <link href="../images/favicon-ab07c47e.ico" rel="icon" type="image/ico">
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-3bdfd5ec.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-1afa28ad.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-1decc47a.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="en en_index" data-languages="[]">
+    <div class="header">
+      <img src="../images/logo-b34a5437.png" class="logo" alt="" />
+      <div class="tabs">
+        <ul>
+          <li class="active">
+              <a href="index.html">
+                Spot
+              </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang">
+        <span>English</span>
+        <img src="../images/down-c11a96e5.png" class="down" alt="" />
+        <ul class="lang-list">
+         <li class="active">
+            <a href="/en">
+              English
+            </a>
+         </li>
+        </ul>
+      </div>
+    </div>
+    <a href="#" id="nav-button">
+      <span>
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#quick-start" class="toc-h1 toc-link" data-title="Quick Start">Quick Start</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#access-url" class="toc-h2 toc-link" data-title="Access URL">Access URL</a>
+                  </li>
+                  <li>
+                    <a href="#rate-limit" class="toc-h2 toc-link" data-title="Rate Limit">Rate Limit</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-access-instructions" class="toc-h1 toc-link" data-title="API Access Instructions">API Access Instructions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request-format" class="toc-h2 toc-link" data-title=" Request Format "><span id="a3"> Request Format </span></a>
+                  </li>
+                  <li>
+                    <a href="#return-format" class="toc-h2 toc-link" data-title="Return Format"><span id="a3">Return Format</span></a>
+                  </li>
+                  <li>
+                    <a href="#error-message" class="toc-h2 toc-link" data-title="Error Message">Error Message</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#basic-information" class="toc-h1 toc-link" data-title="Basic Information">Basic Information</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#currency-amp-spot-information" class="toc-h2 toc-link" data-title="Currency &amp; Spot Info"><span id="1">Currency &amp; Spot Info</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-related" class="toc-h1 toc-link" data-title="Account Related">Order Related</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#assets-balance" class="toc-h2 toc-link" data-title=" Orders Info "><span id="1"> Orders Info </span></a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Pacman.Trade Developer Documentation. It is the only official documentation of Pacman.Trade API.</p>
+
+<p>This documentation provides an introduction to the use of related APIs.</p>
+
+<p>RESTful API includes interfaces such as trading pairs info and orders.</p>
+
+<p>The services provided by Pacman.Trade API will be continuously updated here, so stay tuned for updates.</p>
+<h1 id='quick-start'>Quick Start</h1>
+<p><strong>REST API</strong></p>
+
+<p>REST, the abbreviation of Representational State Transfer, is a popular Internet transmission architecture. It has the characteristics of clear structure, standards compliance, easy understanding and expansion, and is being adopted by more and more websites with the benefits as follows:</p>
+
+<ul>
+<li>In RESTful architecture, each URL represents a resource;</li>
+<li>Some representation layer of this resource is transferred between the client and the server;</li>
+<li>The client operates the server-side resources through four HTTP instructions to realize &quot;presentation layer state transformation&quot;. </li>
+</ul>
+
+<p>Developers are advised to use REST API for one-time operations such as trading pairs info or orders.</p>
+
+<h2 id='access-url'>Access URL</h2>
+<p><strong>REST API</strong></p>
+
+<p><code>https://api.pacman.trade/</code></p>
+
+<h2 id='rate-limit'>Rate Limit</h2>
+<p><strong>Same IP</strong></p>
+
+<p><code>A maximum of 300 requests is allowed every 3 seconds for the same IP.</code></p>
+
+<p><strong>Same User</strong></p>
+
+<p><code>For the same user, a maximum of 120 requests is allowed every 3 seconds.</code></p>
+
+<h1 id='api-access-instructions'>API Access Instructions</h1><h2 id='request-format'><span id="a3"> Request Format </span></h2>
+<p>All API requests are restful, and there are only two methods at present: GET and POST.
+- GET request: All parameters are in path parameters
+- POST request: Parameters can be set in the path, and they can be sent in JSON format to the request body. If there are no parameters, {} needs to be sent</p>
+
+<p>A licit request consists of the following parts: method request address: Access server address api.pacman.trade，e.g. https://api.pacman.trade/market/symbol-thumb & Required and optional parameters</p>
+
+<p><strong>Note: 'Content-Type':'application/json' needs to be set.</strong></p>
+<h2 id='return-format'><span id="a3">Return Format</span></h2>
+<p>All interface returns are in JSON format.</p>
+
+<h2 id='error-message'>Error Message</h2>
+<p><strong>HTTP Status Code</strong></p>
+
+<p>Common error codes for HTTP are as follows:
+- 400 Bad Request – Invalid request format</p>
+
+<ul>
+<li><p>404 service not found</p></li>
+<li><p>429 too many visits</p></li>
+<li><p>500 internal server error</p></li>
+</ul>
+
+
+<h1 id='basic-information'>Basic Information</h1><h2 id='currency-amp-spot-information'><span id="1">Currency & Spot Info</span></h2>
+<p>Get Currency & Spot Info</p>
+<h3 id='http-request'>HTTP Request:</h3>
+<ul>
+<li>POST /market/symbol-thumb</li>
+</ul>
+<h3 id='request-params'>Request Params</h3>
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id='response-data'>Response Data</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Symbol name</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Long</td>
+<td>Listing time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>Service field (not in use)</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>24h high</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>24h low</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>Current price</td>
+</tr>
+<tr>
+<td>chg</td>
+<td>Float</td>
+<td>Daily change in %</td>
+</tr>
+<tr>
+<td>change</td>
+<td>Float</td>
+<td>Service field (not in use)</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>24h volume</td>
+</tr>
+<tr>
+<td>turnover</td>
+<td>Float</td>
+<td>Turnover</td>
+</tr>
+<tr>
+<td>lastDayClose</td>
+<td>Float</td>
+<td>Service field (not in use)</td>
+</tr>
+<tr>
+<td>usdRate</td>
+<td>Float</td>
+<td>Currency price in USD</td>
+</tr>
+<tr>
+<td>baseUsdRate</td>
+<td>Float</td>
+<td>Base USD Price : 1</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>Integer</td>
+<td>Service field (not in use)</td>
+</tr>
+</tbody></table>
+          <blockquote>
+              <p>response</p>
+          </blockquote>
+          <div class="highlight"><pre class="highlight json tab-json"><code>
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAC/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1705318563097</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.112</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.087</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.10999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">12.5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">30.555</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">40.9654</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.10999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.10999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span>
+</code></pre></div><h1 id='account-related'>Order Related</h1><h2 id='assets-balance'><span id="1"> Orders Info </span></h2>
+          <p>Get Orders Info</p>
+          <h3 id='http-request-2'>HTTP Request:</h3>
+          <ul>
+              <li>POST /market/exchange-plate-full</li>
+          </ul>
+<blockquote>
+    <p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">206.68</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"highestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.3236</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAC/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lowestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.10999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">8500.1973</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span>
+            <span class="p">[</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.10999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">225.8181</span><span class="p">,</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">249.62103</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"highestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.06</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAC/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lowestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.00001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2670284.3904</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span>
+            <span class="p">[</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0.06</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">309.37933</span><span class="p">,</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td>Currency name</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-2'>Response Data</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+    <td>"ask"</td>
+    <td>String</td>
+    <td>Defining the info about orders on sell</td>
+</tr>
+<tr>
+    <td>- symbol</td>
+    <td>String</td>
+    <td>Currency name</td>
+</tr>
+<tr>
+    <td>- minAmount</td>
+    <td>Float</td>
+    <td>Minimal amount of orders with one price</td>
+</tr>
+<tr>
+    <td>- maxAmount</td>
+    <td>Float</td>
+    <td>Maximal amount of orders with one price</td>
+</tr>
+<tr>
+    <td>- highestPrice</td>
+    <td>Float</td>
+    <td>Highest price of order</td>
+</tr>
+<tr>
+    <td>- lowestPrice</td>
+    <td>Float</td>
+    <td>Lowest price of order</td>
+</tr>
+<tr>
+    <td>- direction</td>
+    <td>String</td>
+    <td>Showing the direction of order ("SELL"/"BUY")</td>
+</tr>
+<tr>
+    <td>- items</td>
+    <td>Array</td>
+    <td>All orders</td>
+</tr>
+<tr>
+    <td>-  - price</td>
+    <td>Float</td>
+    <td>Price of order</td>
+</tr>
+<tr>
+    <td>-  - amount</td>
+    <td>Float</td>
+    <td>Amount of currency in all orders with corresponding price</td>
+</tr>
+<tr>
+    <td>"bid"</td>
+    <td>String</td>
+    <td>Defining the info about orders on buy</td>
+</tr>
+<tr>
+    <td>- symbol</td>
+    <td>String</td>
+    <td>Currency name</td>
+</tr>
+<tr>
+    <td>- minAmount</td>
+    <td>Float</td>
+    <td>Minimal amount of orders with one price</td>
+</tr>
+<tr>
+    <td>- maxAmount</td>
+    <td>Float</td>
+    <td>Maximal amount of orders with one price</td>
+</tr>
+<tr>
+    <td>- highestPrice</td>
+    <td>Float</td>
+    <td>Highest price of order</td>
+</tr>
+<tr>
+    <td>- lowestPrice</td>
+    <td>Float</td>
+    <td>Lowest price of order</td>
+</tr>
+<tr>
+    <td>- direction</td>
+    <td>String</td>
+    <td>Showing the direction of order ("SELL"/"BUY")</td>
+</tr>
+<tr>
+    <td>- items</td>
+    <td>Array</td>
+    <td>All orders</td>
+</tr>
+<tr>
+    <td>-  - price</td>
+    <td>Float</td>
+    <td>Price of order</td>
+</tr>
+<tr>
+    <td>-  - amount</td>
+    <td>Float</td>
+    <td>Amount of currency in all orders with corresponding price</td>
+</tr>
+</tbody></table>
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
